@@ -91,7 +91,7 @@ console.log(resultado1);
     {
         let myVarLet = 100;
         const myVarConst = 110;
-        var myVarVar =120;
+        var myVarVar = 120;
         console.log(myVarLet, myVarConst, myVarVar);
     }
     console.log(myVarLet, myVarConst, myVarVar);
@@ -108,16 +108,16 @@ console.log("Fin del programa");
 //-----------------Ejercicio2---------------
 
 active = false;
-if (active )
+if (active)
     //Este no se ejecuta, solo se ejecuta una instruccion
-    console.log(`Esta activo`); 
+    console.log(`Esta activo`);
 console.log(`Tiene autorizacion`);
 console.log(`Fin del programa`)
 
 //-----------------Ejercicio3---------------
 
 active = false;
-if (active ); console.log(`Esta activo`); 
+if (active); console.log(`Esta activo`);
 /* else console.log(`No está activo`);
 console.log(`Fin del programa`); */
 
@@ -156,7 +156,7 @@ const nombreMascota = (nombre) => {
     switch (nombre) {
         case "lua":
             resultado = "Es de Abril";
-        break;
+            break;
         case "Milo":
             resultado = "Es de Carlos";
             break;
@@ -171,7 +171,7 @@ const nombreMascota = (nombre) => {
             break;
         default:
             resultado = `No se sabe de quien es`;
-        
+
     }
     return resultado;
 }
@@ -197,21 +197,21 @@ const funcionVentilador = (velocidad) => {
     let resultado4;
     switch (velocidad) {
         case 0:
-        resultado4 = `Apagado`
-        break;
+            resultado4 = `Apagado`
+            break;
         case 1:
-        resultado4 = `Baja`
-        break;
+            resultado4 = `Baja`
+            break;
         case 2:
-        resultado4 = `Media`
-        break;
+            resultado4 = `Media`
+            break;
         case 3:
-        resultado4 = `Alta`
-        break;
+            resultado4 = `Alta`
+            break;
 
         default:
             resultado4 = `Velocidad desconocida`;
-        
+
     }
     return resultado4;
 }
@@ -221,7 +221,7 @@ console.log(funcionVentilador(5));
 
 //Mismo ejercicio pero con funcion if
 console.log(`-------------------------`)
-const funcionVentilador2 = (velocidad) =>{
+const funcionVentilador2 = (velocidad) => {
     if (velocidad === 0) return "Apagado";
     else if (velocidad === 1) return "Baja";
     else if (velocidad === 2) return "Media";
@@ -241,6 +241,110 @@ console.log(resultado5);
 */
 
 
+
+
+const verificarPagoDeTarjeta = (estaPagado) => {
+    let msj;
+    if (estaPagado) {
+        msj = "La tarjeta ha sido pagada";
+    } else {
+        msj = "LA tarjeta no ha sido pagada"
+    }
+    return msj;
+
+}
+console.log(verificarPagoDeTarjeta(true)); // "La tarjeta ha sido pagada "
+console.log(verificarPagoDeTarjeta(false));// "La tarjeta no ha sido pagada "
+
+//Version con operador ternario
+const verificarPagoDeTarjetaTernario = (estaPagado) => {
+
+    return estaPagado ? "La tarjeta ha sido pagada" : "La tarjeta no ha sido pagada";
+
+
+}
+console.log(verificarPagoDeTarjetaTernario(true)); // "La tarjeta ha sido pagada "
+console.log(verificarPagoDeTarjetaTernario(false));// "La tarjeta no ha sido pagada "
+
+/* 
+    Dado un número entero, imprimir:
+    "Negativo: si el número es menor a 0"
+    "Cero": si el numero es 0
+    "Positivo:" si el numero es mayor a cero pero menor a 100
+    "Grande: si el numero es mayor o igual a 100."
+
+    - Realizar una funcion que reciba el numero y retorne el mensaje.
+    - El retorno debe ser impreso en la consola
+    - Realizar una version if-else, switch y operador ternario.
+*/
+
+console.log("-----IF-ELSE----------");
+const funcionNumero1 = (numInt) => {
+    let mensajeNumero;
+    if (numInt < 0) {
+        mensajeNumero = "Negativo";
+    } else if (numInt === 0) {
+        mensajeNumero = "Cero";
+    } else if (numInt > 0 && numInt < 100) {
+        mensajeNumero = "Positivo";
+    } else {
+        mensajeNumero = "Grande";
+    }
+    return mensajeNumero;
+}
+console.log(funcionNumero1(1000)) // Grande
+console.log(funcionNumero1(0)) // Cero
+console.log(funcionNumero1(-10)) // Negativo
+console.log(funcionNumero1(1)) // Positivo
+
+console.log("-----SWICTH----------");
+const funcionNumero2 = (numInt) => {
+    let mensajeNumero2;
+
+    switch (true) {
+        case (numInt < 0):
+            mensajeNumero2 = "Negativo";
+            break;
+        case (numInt === 0):
+            mensajeNumero2 = "Cero";
+            break;
+        case (numInt > 0 && numInt < 100):
+            mensajeNumero2 = "Positivo";
+            break;
+        case (numInt >= 100):
+            mensajeNumero2 = "Grande";
+            break;
+        default:
+            mensajeNumero2 = "Valor no válido";
+    }
+
+    return mensajeNumero2;
+}
+
+console.log(funcionNumero2(999));  // Grande
+console.log(funcionNumero2(0));     // Cero
+console.log(funcionNumero2(-9));   // Negativo
+console.log(funcionNumero2(11));     // Positivo
+
+console.log("-----OPERADOR-TERNARIO----------");
+const funcionNumero3 = (numInt) => {
+    return numInt < 0
+        ? "Negativo"
+        : numInt === 0
+            ? "Cero"
+            : numInt > 0 && numInt < 100
+                ? "Positivo"
+                : numInt >= 100
+                    ? "Grande"
+                    : "Valor no válido";
+}
+
+console.log(funcionNumero2(1000));  // Grande
+console.log(funcionNumero2(0));     // Cero
+console.log(funcionNumero2(-10));   // Negativo
+console.log(funcionNumero2(1));     // Positivo
+console.log(typeof("cats"));
+console.log(3+"bob");
 
 
 /**

@@ -42,7 +42,84 @@
 
 */
 
+/* 
+ Crear un arrow function que reciba el valor de edad. 
+ Si la edad es mayor o igual a 18, la funcion debe 
+ retornar el mensaje "Eres mayor de edad".
 
+ En caso contario, retornar el mensaje "Eres menor de edad"
+
+ -Realizar la version de if-else sin usar el bloque de código {}
+
+*/
+/* 
+const edad = (años) => 
+    años >= 18 ? "Eres mayor de edad" : "Eres menor de edad";
+
+console.log(edad(16));   */
+
+const verificarEdad = edad => {
+    if (edad >= 18) return "Eres mayor de edad";
+    else return "Eres menor de edad";
+}
+const resultado = verificarEdad(19);
+console.log(resultado);
+
+/*
+ Crear un arrow function que reciba el valor de edad.
+ Si la edad es mayor o igual a 18 y menor o igual a 30
+                 ( evalur con 18 Y(&&) evaluar con 30        )
+ la función debe retornar el mensaje "Tu luchador es Místico".
+ Si es mayor o igual a 31 el mensaje "Tu luchador es el perro Aguayo".
+ Si es menor a 18 el mensaje "Tu luchador es Penta"
+*/
+const verificarEdad1 = edad => {
+    if (edad >= 18 && edad <= 30) return "Tu luchador es Místico";
+    else if (edad >= 31) return "Tu luchador es el Perro Aguayo";
+    else if (edad <= 18) return "Tu luchador es el Penta";
+}
+
+const resultado1 = verificarEdad1(24);
+console.log(resultado1);
+
+// Bloque de código
+{
+    let myVarLet = 30;
+    const myVarConst = 40;
+    var myVarVar = 50;
+    console.log(myVarLet, myVarConst, myVarVar);
+    {
+        let myVarLet = 100;
+        const myVarConst = 110;
+        var myVarVar =120;
+        console.log(myVarLet, myVarConst, myVarVar);
+    }
+    console.log(myVarLet, myVarConst, myVarVar);
+}
+
+
+// Ejercicios mentales
+let active = false;
+if (active === true);
+{
+    console.log("Esta activo");
+}
+console.log("Fin del programa");
+//-----------------Ejercicio2---------------
+
+active = false;
+if (active )
+    //Este no se ejecuta, solo se ejecuta una instruccion
+    console.log(`Esta activo`); 
+console.log(`Tiene autorizacion`);
+console.log(`Fin del programa`)
+
+//-----------------Ejercicio3---------------
+
+active = false;
+if (active ); console.log(`Esta activo`); 
+/* else console.log(`No está activo`);
+console.log(`Fin del programa`); */
 
 
 //--------------- Condicional Switch --------------------------
@@ -74,6 +151,34 @@
 */
 
 
+const nombreMascota = (nombre) => {
+    let resultado;
+    switch (nombre) {
+        case "lua":
+            resultado = "Es de Abril";
+        break;
+        case "Milo":
+            resultado = "Es de Carlos";
+            break;
+        case "Cuchara":
+            resultado = "Es de Ricardo";
+            break;
+        case "Charly":
+        case "Jack":
+        case "Popeye":
+        case "Dante":
+            resultado = "Es de Rene";
+            break;
+        default:
+            resultado = `No se sabe de quien es`;
+        
+    }
+    return resultado;
+}
+console.log(nombreMascota("Lua")); //Es de Abril
+console.log(nombreMascota("Milo")); //Es de Carlos
+console.log(nombreMascota("Charly")); //Es de Rene
+
 
 
 /**
@@ -88,8 +193,42 @@
  * @returns {string} mensaje
  */
 
+const funcionVentilador = (velocidad) => {
+    let resultado4;
+    switch (velocidad) {
+        case 0:
+        resultado4 = `Apagado`
+        break;
+        case 1:
+        resultado4 = `Baja`
+        break;
+        case 2:
+        resultado4 = `Media`
+        break;
+        case 3:
+        resultado4 = `Alta`
+        break;
 
+        default:
+            resultado4 = `Velocidad desconocida`;
+        
+    }
+    return resultado4;
+}
+console.log(funcionVentilador(1));
+console.log(funcionVentilador(3));
+console.log(funcionVentilador(5));
 
+//Mismo ejercicio pero con funcion if
+console.log(`-------------------------`)
+const funcionVentilador2 = (velocidad) =>{
+    if (velocidad === 0) return "Apagado";
+    else if (velocidad === 1) return "Baja";
+    else if (velocidad === 2) return "Media";
+    else if (velocidad === 3) return "Alta";
+}
+const resultado5 = funcionVentilador2(0);
+console.log(resultado5);
 
 // ------------------------ Operador ternario --------------------------
 /*

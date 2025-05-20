@@ -30,10 +30,16 @@ true && false // Expresión lógica (devuelve false)
 // ---- Precedencia de operadores -------------------------
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Operator_Precedence
 
-console.log(  3 * 2 / 2  ); // 
-console.log(  3 / 2 * 2  ); // 
-console.log(  2 * 4 / 2**3 ); // 
-console.log(  3 ** 2 ** 3  ); // 
+console.log(3 * 2 / 2); // 3
+console.log(3 / 2 * 2); // 3
+console.log(2 * 4 / 2 ** 3); //  
+console.log(3 ** 2 ** 3); // 
+
+let a2, b2, c2;
+let a3;
+let b3;
+let c3;
+let a4 = a5 = a6 = true;
 
 // ---------------- Opéradores relacionales ----------------
 /*
@@ -51,16 +57,16 @@ console.log(  3 ** 2 ** 3  ); //
    - null se convierte a 0.
    - undefined se convierte a NaN.
 */
-console.log(  3 < 5 ); // 
-console.log(  3 > 5 ); // 
-console.log(  3 <= 3 ); // 
-console.log(  3 >= 3 ); // 
+console.log(3 < 5); // 
+console.log(3 > 5); // 
+console.log(3 <= 3); // 
+console.log(3 >= 3); // 
 
-console.log( null <= 0 ); // 
-console.log( undefined <= 0 ); // 
+console.log(null <= 0); // 
+console.log(undefined <= 0); // 
 
-console.log(  "3" >= 3 ); // 
-console.log(  "tree" >= 3 ); // 
+console.log("3" >= 3); // 
+console.log("tree" >= 3); // 
 
 
 // ---------------- Operadores de igualdad ----------------
@@ -77,14 +83,14 @@ console.log(  "tree" >= 3 ); //
   - null y undefined NO son convertidos a cero
 
 */
-console.log(  3 == 3 );  // 
-console.log(  3 == "3" ); // 
-console.log(  3 === "3" ); // 
-console.log(  3 !== "3" ); // 
-console.log(  3 != "3" );  // 
+console.log(3 == 3);  // 
+console.log(3 == "3"); // 
+console.log(3 === "3"); // 
+console.log(3 !== "3"); // 
+console.log(3 != "3");  // 
 
 // Si un operando es null y el otro undefined, devuelve verdadero(true).
-console.log( null == undefined ); // true
+console.log(null == undefined); // true
 
 // Si ambos son objetos, devuelve true solo si ambos operandos hacen 
 // referencia al mismo objeto.
@@ -92,24 +98,38 @@ const obj1 = { name: "Juan" };
 const obj2 = { name: "Juan" };
 const obj3 = obj1;
 
-console.log( obj1 == obj2 ); // 
-console.log( obj1 == obj3 ); // 
+console.log(obj1 == obj2); // true
+console.log(obj1 == obj3); // true
 
 //--- Si los operandos son de diferente tipos, intenta convertirlos al mismo tipo antes de comparar:-----
 // Al comparar un número con una cadena, convierte la cadena en un valor numérico.
-console.log(  3 == "3" ); // 
+console.log(3 == "3"); // true
 
 
 // Si uno de los operandos es booleano, convierte el operando booleano en 
 // 1 si es verdadero y en 0 en el caso de falso.
-console.log(  1 == true ); // 
-console.log(  0 == false ); // 
+console.log(1 == true); // true
+console.log(0 == false); // true
 
 //--- Si los operandos tienen el mismo tipo, se comparan de la siguiente manera:-----
 // String: devuelve verdadero solo si ambos operandos tienen los mismos caracteres y en el mismo orden.
-console.log( "hola" == "hola" ); // 
-console.log( "hola" == "Hola" ); // 
-console.log( 'Hola "Ch5x" ' == 'Hola "Ch5x" ' ); 
+console.log("hola" == "hola"); // true 
+console.log("hola" == "Hola"); // false
+console.log('Hola "Ch5x" ' == 'Hola "Ch5x" '); //true 
+console.log('Hola \"Ch5x\" ' == 'Hola "Ch5x" '); //true 
+console.log("Hola \"Ch5x\" " == "'Hola 'Ch5x' "); //false
+
+/* 
+ Uso del caracte de escape:
+ \n nueva linea
+ \t tabulacion
+ \\ barra invertida
+   \'  comilla simple
+  \"  comilla doble
+  \`   comilla invertida
+  \b  retroceso
+  \uXXXX  unicode   \u00A9 = ©
+*/
 
 
 // Se recomienda usar el método localCompare(): compara cadenas de texto de acuerdo con las reglas de un idioma específico
@@ -122,13 +142,13 @@ console.log("a".localeCompare("A", "en", { sensitivity: "base" })); //
 // Number: devuelve verdadero solo si ambos operandos tienen el mismo valor. 
 // +0 y -0 se tratan como el mismo valor. 
 // Si alguno de los operandos es NaN, devuelve falso.
-console.log(  +0 == -0 ); // 
-console.log(  NaN == NaN ); // 
-console.log(  1 == 1 ); // 
-console.log(  1 == 1.0 ); // 
-console.log(  1 == 1.1 ); // 
+console.log(+0 == -0); // 
+console.log(NaN == NaN); // 
+console.log(1 == 1); // 
+console.log(1 == 1.0); // 
+console.log(1 == 1.1); // 
 
-console.log(  isNaN("hola" / 3 )  ); // 
+console.log(isNaN("hola" / 3)); // 
 
 
 // ------- Operadores de asignación ----------------
@@ -151,12 +171,20 @@ suma += 2;
 
 // --------- ejercicio mental --------------------
 let valorA = 15;
-valorA *= 2; 
+valorA *= 2;
 
 
 // --------- ejercicio mental --------------------
 let mensaje = "Me voy a de vacaciones";
-mensaje += 2; 
+mensaje += 2;
+
+console.log( mensaje );
+// --------- ejercicio mental con for--------------------
+// que imprime el console.log o no imprime?
+for (let i=1;i<=10; i+=2){
+  console.log( i );
+} // 1,3,5,7,9
+
 
 
 
@@ -165,19 +193,20 @@ mensaje += 2;
 // Negación unaria (cambia el signo en números)
 let numero = 3;
 let dinero = -numero; // 
-console.log( numero, dinero); // 
+console.log(numero, dinero); // 3,-3
 
 // suma unaria (No cambia el signo el números)
 let pago = +dinero; // 
-console.log( pago ); // 
+console.log(pago); // -3
 
 let intereses = +"5.23"; // 
-console.log( 5 + intereses ); //  
-console.log( 5 + parseInt(intereses) ); // 
+console.log(5 + intereses); //  10.23
+console.log(5 + parseInt(intereses)); // 10
 
 let pagoFinal = 0;
-console.log( pagoFinal += 5 + + "3" ); // 
-console.log( pagoFinal += 5 + parseFloat ("3") ); // 
+console.log(pagoFinal += 5 + + "3"); // 8
+pagoFinal = 0;
+console.log(pagoFinal += 5 + parseFloat("3")); // 8
 
 
 // Operador de incremento y decremento en unidad.
@@ -193,61 +222,63 @@ console.log( pagoFinal += 5 + parseFloat ("3") ); //
 */
 
 let number = 10;
-++ number; // number = number + 1
-console.log( number ); // 
-number ++; // number; number = number + 1; 
-console.log( number ); // 
+++number; // number = number + 1
+console.log(number); // 
+number++; // number; number = number + 1; 
+console.log(number); // 
 
 // Uso de post-incremento
 number = 20;
-console.log( number ); // 
-console.log( number = number + 1 ); //
+console.log(number); // 
+console.log(number = number + 1); //
 // valor++
 number = 20;
-console.log( number++ ); // 
-console.log( number ); // 
+console.log(number++); // 
+console.log(number); // 
 
 // Uso de pre-incremento
 number = 40;
-console.log( number = number + 1 ); // 
-console.log( number ); // 
+console.log(number = number + 1); // 
+console.log(number); // 
 
 // ++valor
 number = 40;
-console.log( ++number ); // 
-console.log( number ); // 
+console.log(++number); // 
+console.log(number); // 
 
 number = 100;
 let kati = 10;
-console.log( kati + + number  ); // 
-console.log( kati + ++number  ); // 
+console.log(kati + + number); // 
+console.log(kati + ++number); // 
 
 // ------------ Ejercicio Mental ---------------------
 let x = 3;
 let y = x++; // y:3   x:4
 
-console.log(`x :${ x++ } y:${ ++y }`); // 
-                                       // 
-console.log(`x :${ x } y:${ y }`); // 
+console.log(`x :${x++} y:${++y}`); // 
+// 
+console.log(`x :${x} y:${y}`); // 
 
 // ------------ Ejercicio Mental ---------------------
 
 // let a = b = 0; b es declara con var
 let a = 0, b = 0; // a y b son declaradas con let
 
-for( ; a < 3 ; b = a++){ 
-  console.log( a , b ); 
+for (; a < 3; b = a++) {
+  console.log(a, b);
 
 }
-console.log( a , b ); //
+console.log(a, b); //
 
 // ------------ Ejercicio Mental ---------------------
 a = 0, b = 0; // 
 
-for(    ; a < 3 ; b = ++a){ // 
-  console.log( a , b ); 
+for (; a < 3; b = ++a) { // 
+  console.log(a, b);
 }
-console.log( a , b ); //
+console.log(a, b); //
+
+
 
 
 // ---------------- Operadores lógicos && y || ---------------
@@ -259,26 +290,26 @@ console.log( a , b ); //
 
  Se consideran falsos: "", 0, null, undefined, NaN
 */
-console.log( true && false ); // 
-console.log( true && "Usando corto circuito ");// 
-console.log( "false" && "Mi mente sigue de vacaciones");// 
-console.log( 0 && "Chau, chau"); // 
-console.log( "" && "Chau, chau"); // 
-console.log( false && "Chau, chau"); // 
+console.log(true && false); // 
+console.log(true && "Usando corto circuito ");// 
+console.log("false" && "Mi mente sigue de vacaciones");// 
+console.log(0 && "Chau, chau"); // 
+console.log("" && "Chau, chau"); // 
+console.log(false && "Chau, chau"); // 
 
-console.log( true || false ); // 
-console.log( true || "Usando corto circuito "); // 
-console.log( "false" || "Mi mente sigue de vacaciones"); // 
-console.log( 0 || "Chau, chau"); //  
-console.log( "" || "Chau, chau"); // 
-console.log( false || "Chau, chau"); // 
-console.log( false || undefined ); // 
+console.log(true || false); // 
+console.log(true || "Usando corto circuito "); // 
+console.log("false" || "Mi mente sigue de vacaciones"); // 
+console.log(0 || "Chau, chau"); //  
+console.log("" || "Chau, chau"); // 
+console.log(false || "Chau, chau"); // 
+console.log(false || undefined); // 
 
-console.log( "Activado" && undefined ); // 
+console.log("Activado" && undefined); // 
 
 // ------------- casos prácticos -----------------------
 // console.log(   variableSinDeclarar ); // La variable no ha sido declarada
-console.log( true || variableSinDeclarar   ); 
+console.log(true || variableSinDeclarar);
 
 // -----------------------------------------------------
 let loggedIn = false;
@@ -288,6 +319,7 @@ loggedIn && console.log("Bienvenido Usuario"); //
 // Mostrar en consola "Acceso permitido" solo si la variable esAdmin = true
 let esAdmin = true;
 
+esAdmin && console.log(`Acceso permitido`)
 
 // ------------------------------------------------------
 let nombre = "";
@@ -295,12 +327,21 @@ let usuario = nombre || "Invitado";
 // https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
 //let usuario = nombre ?? "Invitado"; // funciona para null y undefined
 
-console.log( "Hola " + usuario ); // Invitado
+console.log("Hola " + usuario); // Invitado
 
 // ------------------ Ejercicio --------------------------
 /*
   Imprimir en consola "Acceso Denegado" Si la variable esAutorizado = false
   En caso contrario imprimir "Acceso concedido".
 */
-let autorizado = true;
 
+let esAutorizado = true; 
+
+console.log( esAutorizado && "Acceso concedido" ||"Acceso denegado")
+
+
+if (esAutorizado === false) {
+  console.log("Acceso Denegado");
+} else {
+  console.log("Acceso Concedido");
+}

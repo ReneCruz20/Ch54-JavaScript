@@ -338,7 +338,7 @@ console.log("Hola " + usuario); // Invitado
 let esAutorizado = true; 
 
 console.log( esAutorizado && "Acceso concedido" ||"Acceso denegado")
-
+console.log( esAutorizado ? "Acceso Concedido" : "Acceso Denegado" );
 
 if (esAutorizado === false) {
   console.log("Acceso Denegado");

@@ -289,15 +289,25 @@ const comparaNumeros = ( a, b ) => {
     if ( a > b ) return 1;
     return 0;
 }
+
+
+const comparaNumeros2 = (a,b ) => a - b;
+
 const comparaNumerosOrdenDescendente = ( a, b ) => {
     if ( a < b ) return 1;
     if ( a > b ) return -1;
     return 0;
 }
-const ordenarNumeros = ( numerosDesordenados, fncCallBack )=>{
-    const numerosOrdenados = numerosDesordenados;
-    numerosOrdenados.sort( comparaNumerosOrdenDescendente );
+const comparaNumerosOrdenDescendente2 = ( a, b ) => b - a;
+const ordenarNumeros = ( numerosDesordenados, tipoOrden )=>{
+    const numerosOrdenados = numerosDesordenados.slice();
+    numerosOrdenados.sort( tipoOrden );
     return numerosOrdenados;
 }
 console.log( numerosIniciales );
 console.log( ordenarNumeros(numerosIniciales, comparaNumeros) );
+console.log( numerosIniciales );
+
+console.log( ordenarNumeros([28,37,99,52,5], comparaNumerosOrdenDescendente) );
+console.log( ordenarNumeros([28,37,99,52,5], comparaNumerosOrdenDescendente2) );
+console.log( ordenarNumeros([28,37,99,52,5], (a,b)=>b-a) );

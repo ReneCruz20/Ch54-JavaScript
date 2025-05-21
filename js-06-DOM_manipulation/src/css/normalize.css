@@ -42,6 +42,13 @@
     margin: 0.67em 0;
   }
   
+  .color{
+    color:rgb(61, 95, 26);
+  }
+  .MiPlayeraBody{
+    background-color: darkgray;
+
+  }
   /* Grouping content
      ========================================================================== */
   

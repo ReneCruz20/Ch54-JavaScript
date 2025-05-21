@@ -33,13 +33,41 @@ const changeElementById = () =>{
   //         document es el objeto principal del DOM.
     const descripcionOperadores = document.getElementById("descripcion-document");
     console.log( descripcionOperadores );
-    // descripcionOperadores.innerText = "document: representa cualquier página web carga en el navegador.";
+    
     //descripcionOperadores.innerText = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
     //descripcionOperadores.innerHTML = "<strong>document</strong>: representa cualquier página web carga en el navegador.";
     descripcionOperadores.innerHTML = '<span class="text-warning">document</span>: representa cualquier página web carga en el navegador.';
 }
 
 changeElementById();
+
+
+/* 
+    Modificar el parragrap de la linea 44 a 49 del html
+    Mostrar una tarjeta de bootstrap con el titulo "Mi nombre"
+
+    - Crear una nueva funcion que inserte la tarjeta.
+    - Invocar la funcion para que se ejecute
+*/
+
+
+const tarjetaDom = ( name ) => {
+  const tarjetaMostrar = document.getElementById("tarjeta");
+
+  tarjetaMostrar.innerHTML = `
+    <div class="card" style="width: 20rem;" >
+      <div class="card-body">
+        <h5 class="card-title">${name}</h5>
+        <p class="card-text">Me duele la espalda :'(</p>
+        <a href="#" class="btn btn-success">Por el momento no funciona </a>
+      </div>
+    </div>
+  `;
+};
+
+tarjetaDom("Rene Cruz");
+
+
 
 /**
  * Modificar elementos por su tag(etiqueta HTML)
@@ -53,6 +81,19 @@ const changeElementsByTagName =  () => {
    }
 
 }
+
+
+/* 
+    . Realizar una funcion que lea todos los botones de la pagina y
+    muestre en consola el numero total de botones
+*/
+
+const changeElementsByButtons =  () => {
+   const buttonItems = document.getElementsByTagName("button");
+   console.log( "cantidad de botones" , buttonItems.length );
+}
+
+changeElementsByButtons();
 
 // changeElementsByTagName();
 

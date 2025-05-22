@@ -79,6 +79,14 @@ Características clave de los módulos JS:
 
 // importa las funciones del footer y header e invócalos para que se ejecuten
 
+import { insertMainHeader } from "../../src/modules/header/header.js";
+import footer from "../modules/footer/footer.js";
+
+insertMainHeader(document.getElementById("header"));
+footer(document.getElementById("footer"));
+
+/* import { insertMainFooter } from "../modules/footer/footer.js";
+insertMainFooter(document.getElementById("footer")); */
 
 
 /*
@@ -100,7 +108,51 @@ Características clave de los módulos JS:
 
 */
 
+/* 
+  Crear en el HTML un input y un boton para guardar el valor en el localStorage
+  Al cargar la pagina, si hay un valor guardado, mostrarlo en el titulo H1 "Hola,{nombre}"
+  En caso contrario, mostrar "Hola, persona invitada"
 
+*/
+
+
+
+const leerNombreDelLocalStorage = () => {
+  const nombre = localStorage.getItem("nombre") || "persona invitada";
+  return nombre;
+}
+const insertarNombreEnElDOM = () => {
+  const refH2 = document.querySelector("#bienvenida");
+  const nombre = leerNombreDelLocalStorage();
+  // refH1.innerHTML = `Hola, ${nombre}`;
+  refH2.textContent = `Hola, ${nombre}`;
+}
+insertarNombreEnElDOM();
+
+const manejoDelBotonGuardar = () =>{
+  const refInput = document.querySelector("#nombreInput");
+  const newName = refInput.value;
+  newName && localStorage.setItem("nombre", newName);
+}
+
+/**
+ *  ¿Que es addEventListener?
+ * Es un métdo que permite escuchar eventos (como click, keydown, submit, etc ... )es un elemento
+ *  del Dom, y ejecutar una funcion cuando ese evento ocurre.
+ */
+
+const refSaveButton = document.getElementById("btnGuardar");
+refSaveButton.addEventListener("click", manejoDelBotonGuardar)
+
+
+const refNameInput = document.getElementById("nombreInput");
+refNameInput.addEventListener( "keydown" , ( event )=>{
+  console.log(event.key);
+});
+
+//NO lo debemos hacer ⬆
+
+/* window.aLlamadaBotonGuardar = manejoDelBotonGuardar; */
 
 
 /*
@@ -152,7 +204,17 @@ tercerPaso();
      setTimeout( ()=>{}  , tiempo_ms );
 
 */
+/* 
+const saludar = (nombre, nombreCh54) => alert(`Hola ${nombre}`);
+const saludarTranscurrido10Seg = (milisegundos ) => {
+
+  setTimeout(saludar, milisegundos, "Neo", "Cris" );
+
+};
+
+console.log("Antes de saludar");
+saludarTranscurrido10Seg( 5000);
+console.log("Despues de saludar")
 
 
-
-
+ */

@@ -37,7 +37,7 @@
                             <i class="bi bi-person-hearts"></i>
                             <label for="name" class="form-label">Nombre</label>
                             <div class="position-relative">
-                                <input type="text" class="form-control form-control-with-icon" id="name"
+                                <input type="text" name="name" class="form-control form-control-with-icon" id="name"
                                     placeholder="Arenita">
                             </div>
                         </div>
@@ -46,8 +46,8 @@
                             <i class="bi bi-heart-arrow"></i>
                             <label for="family-name" class="form-label">Apellido</label>
                             <div class="position-relative">
-                                <input type="text" class="form-control form-control-with-icon" id="family-name"
-                                    placeholder="Mejillas">
+                                <input type="text" name="lastname" class="form-control form-control-with-icon"
+                                    id="family-name" placeholder="Mejillas">
                             </div>
                         </div>
 
@@ -55,7 +55,7 @@
                             <i class="bi bi-envelope-paper-heart-fill"></i>
                             <label for="email" class="form-label">Email</label>
                             <div class="position-relative">
-                                <input type="email" class="form-control form-control-with-icon" id="email"
+                                <input type="email" name="email" class="form-control form-control-with-icon" id="email"
                                     placeholder="bob@email.com">
                             </div>
                         </div>
@@ -64,8 +64,8 @@
                             <i class="bi bi-arrow-through-heart-fill"></i>
                             <label for="new-password" class="form-label">Password</label>
                             <div class="position-relative">
-                                <input type="password" class="form-control form-control-with-icon" id="new-password"
-                                    placeholder="*******">
+                                <input type="password" name="password" class="form-control form-control-with-icon"
+                                    id="new-password" placeholder="*******">
                             </div>
                         </div>
 
@@ -73,18 +73,25 @@
                             <i class="bi bi-calendar-heart-fill"></i>
                             <label for="bday" class="form-label">Fecha de nacimiento</label>
                             <div class="position-relative">
-                                <input type="date" class="form-control form-control-with-icon" id="bday">
+                                <input type="date" name="birthdate" class="form-control form-control-with-icon"
+                                    id="bday">
                             </div>
                         </div>
 
+                        <div class="mx-3 mb-3 form-check">
+                            <input type="checkbox" name="terminos-condiciones" class="form-check-input"
+                                id="terminos-condiciones">
+                            <label class="form-check-label" for="terminos-condiciones">
+                                Acepto términos y condiciones
+                            </label>
+                        </div>
+
+                        <div class="mx-3 mb-3">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
 
                     </div>
 
-                    <div class="mx-3 contenedor-terminos-boton">
-                        <input id="terminos-condiciones" type="checkbox">
-                        <label for="terminos-condiciones"> Acepto términos y condiciones </label>
-                        <button type="submit" class="mx-3 btn btn-warning">Registrar</button>
-                    </div>
 
                     <!-- Mensaje de alerta -->
                     <div id="alert-message" class="alert alert-warning my-2" role="alert" style="display: none;">
